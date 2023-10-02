@@ -1,3 +1,6 @@
+# https://stackoverflow.com/questions/20455977/sum-up-all-the-integers-in-range
+# https://realpython.com/python-sum-function/
+
 # Ask the user for input, using input, which stored as a string.
 # int() converts this string to an integer
 n = int(input("Enter a number: "))
@@ -18,3 +21,4 @@ for i in range(1, n + 1):
 
 # Print the result
 print(f"The sum of numbers from 1 to {n} is: {sum_of_numbers}")
+
