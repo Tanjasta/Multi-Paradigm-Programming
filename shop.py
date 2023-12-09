@@ -25,7 +25,7 @@ class Customer:
 
 def create_and_stock_shop():
     s = Shop()
-    with open('../stock.csv') as csv_file:
+    with open('stock.csv') as csv_file:
         csv_reader = csv.reader(csv_file, delimiter=',')
         first_row = next(csv_reader)
         s.cash = float(first_row[0])
@@ -69,8 +69,8 @@ def print_shop(s):
         print_product(item.product)
         print(f'The Shop has {item.quantity} of the above')
 
-#s = create_and_stock_shop()
-#print_shop(s)
+s = create_and_stock_shop()
+print_shop(s)
 
-c = read_customer("../customer.csv")
+c = read_customer('customer.csv')
 print_customer(c)
