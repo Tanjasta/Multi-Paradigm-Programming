@@ -20,8 +20,24 @@ def create_and_stock_shop():
 
     
 
-def read_customer(file_path):
-    pass
+def read_customer():
+    customer = {}
+    with open('customer.csv') as csv_file:
+        csv_reader = csv.reader(csv_file, delimiter = ',')
+        first_row = next(csv_reader)
+        customer ["name"] = first_row[0]
+        customer ["cash"] = float(first_row[1])
+        customer["products"] = []
+        for row in csv_reader:
+            product ={}
+
+            product["name"] = row[0]
+            product["quantity"] = row[1]
+
+            customer["products"].append(product)
+
+    return customer
+
     
 
 
@@ -30,8 +46,12 @@ def print_product(product):
     
     
 
-def print_customer(c):
-    pass
+def print_customer(customer):
+    print(f'NAME:{customer["name"]}, CASH:{customer["cash"]} ')
+    for product in customer["products"]:
+        print(f'NAME:{product["name"]}, QUANTITY:{product["quantity"]}')
+
+    
     
 
 def print_shop(shop):
@@ -43,3 +63,5 @@ def print_shop(shop):
 shop = create_and_stock_shop()
 print_shop(shop)
 
+customer = read_customer()
+print_customer(customer)
