@@ -24,7 +24,7 @@ class Shop:
         print(f'INITIAL CASH: {self.cash}')
         for product in self.products:
             print(f'NAME: {product.name}, PRICE: {product.price}, QUANTITY: {product.quantity}')
-
+    
     def process_order(self, customer):
         for customer_product in customer.products:
             for shop_product in self.products:
@@ -35,7 +35,12 @@ class Shop:
                         print(f"Order processed for {customer_product.name} quantity: {customer_product.quantity}")
                     else:
                         print(f"Not enough stock for {customer_product.name}")
+                    
                     break
+            else:
+                print(f"Product {customer_product.name} not found in the shop")
+    
+        
         print(f"Remaining cash in the shop: {self.cash}")
 
 class Customer:
