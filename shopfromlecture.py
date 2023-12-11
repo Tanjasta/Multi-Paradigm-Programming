@@ -41,6 +41,7 @@ def read_customer():
     
 
 
+
 def print_product(product):
     print (f'NAME:{product["name"]}, PRICE:{product["price"]}, QUANTITY:{product["quantity"]}')
     
