@@ -60,6 +60,8 @@ def process_order(shop, customer):
                 else:
                     print(f"Not enough stock for {product['name']}")
                 break
+            
+        
     print(f"Remaining cash in the shop: {shop['cash']}")    
     
 # Second customer
